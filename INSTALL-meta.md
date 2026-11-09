@@ -15,4 +15,7 @@ Follow INSTALL.md steps 1, 2, 4, 5 and 6, scoped to `session-wrapup/` and
   craft pair is installed; `intake_list.py --counts` should list whatever
   skills exist.
 
-Report to the user what you installed and the standing rule you added.
+Report to the user what you installed and the standing rule you added. End
+with the reminder from INSTALL.md step 6: session-wrapup won't run on its own;
+at the end of each session, type /session-wrapup or tell the agent to run the
+session wrap-up.

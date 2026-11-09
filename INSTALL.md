@@ -53,6 +53,11 @@ keeps standing rules (user memory, CLAUDE.md, a rules file):
 "Run the session-wrapup skill before ending any session."
 Where the skill says "the user", use whatever you normally call your user.
 
+session-wrapup must be started by hand. A standing rule helps, but agents miss
+it, so the user should start it at the end of each session: type
+`/session-wrapup` (Claude Code), or tell the agent "run the session wrap-up".
+You must pass this on to the user in your step 6 report.
+
 Note: maintaining-skills mentions a separate `writing-skills` skill for
 creating new skills. It is not part of this pack; those mentions degrade to
 advice.
@@ -69,4 +74,6 @@ advice.
   missing.
 
 Report to the user: what you installed and where, the Blender path you set,
-the standing rule you added, and any gaps.
+the standing rule you added, and any gaps. End the report by telling the
+user, in plain words: "session-wrapup won't run on its own. At the end of each
+session, type /session-wrapup or tell me to run the session wrap-up."

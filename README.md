@@ -24,6 +24,14 @@ INSTALL-craft.md installs only blender and art-direction. INSTALL-meta.md
 installs only session-wrapup and maintaining-skills. Built for Claude Code;
 each INSTALL file carries a short adaptation note for other harnesses.
 
+## Run session-wrapup yourself
+
+session-wrapup does not fire on its own. Run it at the end of each session:
+type `/session-wrapup`, or just tell the agent "run the session wrap-up".
+If you skip it, findings pile up in the INTAKE.md files and never get merged.
+The standing rule INSTALL.md adds will remind the agent, but don't count on
+that alone.
+
 ## What the skills assume
 
 Markdown plus Python 3.10+. Most scripts use only the standard library; the two
