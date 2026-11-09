@@ -1,0 +1,12 @@
+# Allowlist for check_values.py. One exception per line:
+#
+#   VALUE [@ file1.md,file2.md] | REASON
+#
+# VALUE is written any way the corpus writes it; it is normalised the same way the scanner
+# normalises its finds ("5 to 8" equals "5-8", "0.50" equals "0.5"). The optional @ list
+# restricts the exception to those files, so a third file reusing the value is still reported.
+# A REASON is required. Only identity facts and unavoidable worked-example reuse belong here;
+# a repeated tuned value is fixed by deleting the second copy, not by listing it.
+
+24 mm | The designed camera's lens in this project. Three separate worked examples use it as their arithmetic input (scale.md spec-error case, diagnosis.md detail-size case, scene-code.md far-rank case). None states it as a recommendation; lens choice is owned by scale.md, Lens.
+60 fps | A frame rate names a run, not a tuned value: final-video and loop-test frame rates of named runs, used as arithmetic inputs in animation.md and api.md.

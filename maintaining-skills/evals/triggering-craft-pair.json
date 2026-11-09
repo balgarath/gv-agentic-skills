@@ -1,0 +1,92 @@
+[
+  {
+    "id": 101,
+    "query": "dome scene render finished, exit code 0, and the PNG is solid black. script is the one from last night, only thing I changed was swapping in the new camera",
+    "should_trigger": true,
+    "intended_skill": "blender",
+    "category": "clear",
+    "pass_if": "intended skill loads, OR art-direction loads first and its triage hands off to blender within one step",
+    "why_this_points_there": "Black frame. Broken, not bad."
+  },
+  {
+    "id": 102,
+    "query": "running my scene script headless and it dies with AttributeError: 'SceneEEVEE' object has no attribute 'use_bloom'. this worked fine on 4.2",
+    "should_trigger": true,
+    "intended_skill": "blender",
+    "category": "clear",
+    "pass_if": "intended skill loads, OR art-direction loads first and its triage hands off to blender within one step",
+    "why_this_points_there": "Version API break with a traceback. Execution, no aesthetic question anywhere."
+  },
+  {
+    "id": 103,
+    "query": "I put a volume scatter cube round the whole set, density up at 0.05, and there's no fog at all in the render. lamps are fine, everything else is fine, just no haze",
+    "should_trigger": true,
+    "intended_skill": "blender",
+    "category": "clear",
+    "pass_if": "intended skill loads, OR art-direction loads first and its triage hands off to blender within one step",
+    "why_this_points_there": "Missing fog is named as a broken-render symptom in blender's description. Mentions haze, which art-direction also owns as craft, so this checks that 'absent' beats 'ugly'."
+  },
+  {
+    "id": 104,
+    "query": "the obelisk just isn't in the shot. camera is pointed straight at it, it's about 7 km out, everything closer renders normally",
+    "should_trigger": true,
+    "intended_skill": "blender",
+    "category": "clear",
+    "pass_if": "intended skill loads, OR art-direction loads first and its triage hands off to blender within one step",
+    "why_this_points_there": "Object missing because of the camera clip distance. The 7 km may pull toward art-direction's scale topic, but nothing is badly composed, the object is simply absent."
+  },
+  {
+    "id": 105,
+    "query": "render works fine technically but it looks like a default tutorial scene. flat, no depth, nothing pulls the eye anywhere. what would make it feel more like a film still",
+    "should_trigger": false,
+    "intended_skill": "art-direction",
+    "category": "clear",
+    "pass_if": "intended skill loads, OR blender loads first and its triage hands off to art-direction within one step",
+    "why_this_points_there": "Works but looks flat. Bad, not broken, so this belongs to art-direction. The blender description does not list look-quality complaints as triggers."
+  },
+  {
+    "id": 106,
+    "query": "the obelisk is supposed to be enormous but in the frame it reads like a desk lamp. how do I make people feel how big it is",
+    "should_trigger": false,
+    "intended_skill": "art-direction",
+    "category": "clear",
+    "pass_if": "intended skill loads, OR blender loads first and its triage hands off to art-direction within one step",
+    "why_this_points_there": "Scale not reading. Art-direction's lead topic. Uses the same obelisk as 104 on purpose, so the pair tests absent versus small."
+  },
+  {
+    "id": 107,
+    "query": "got about 400 little triangle fighters in the arena and from the main camera it's just mush. can't tell whose army is whose or who's winning",
+    "should_trigger": false,
+    "intended_skill": "art-direction",
+    "category": "clear",
+    "pass_if": "intended skill loads, OR blender loads first and its triage hands off to art-direction within one step",
+    "why_this_points_there": "Crowd readability. A crowd also invites instancing and batching, which are blender topics, but the complaint is that it cannot be read."
+  },
+  {
+    "id": 108,
+    "query": "need a colour scheme for the night arena, mostly dark with a couple of glowing accents. every time I try it goes muddy brown. and where should the entrance camera sit so you see the obelisk and the whole arena at once",
+    "should_trigger": false,
+    "intended_skill": "art-direction",
+    "category": "clear",
+    "pass_if": "intended skill loads, OR blender loads first and its triage hands off to art-direction within one step",
+    "why_this_points_there": "Palette and camera placement for an explorable space. No renderer named, so this is the renderer-agnostic case."
+  },
+  {
+    "id": 109,
+    "query": "the glow around the lamps is blowing the whole frame out to white and I can't see the arena any more",
+    "should_trigger": true,
+    "intended_skill": "blender",
+    "category": "near-miss",
+    "pass_if": "blender loads, OR art-direction loads first and its triage hands off to blender within one step",
+    "why_this_points_there": "Genuinely on the boundary. 'Blown out to white' is the broken side (a clamping or exposure setting, covered by blender's diagnosis), but 'glow' also appears in art-direction's light and colour craft. Intended target is blender because the frame is unreadable, not merely unattractive. An art-direction first fire is acceptable only if it hands off."
+  },
+  {
+    "id": 110,
+    "query": "fog is working now but every distance layer comes out the same flat grey and the depth doesn't read. how should I set the haze up so it separates the hills",
+    "should_trigger": false,
+    "intended_skill": "art-direction",
+    "category": "near-miss",
+    "pass_if": "art-direction loads (blender co-loading afterwards for the volume settings is fine), OR blender loads first and its triage hands off to art-direction within one step",
+    "why_this_points_there": "The fog works, so nothing is broken. The question is how many haze steps and what value separation, which is depth banding and atmospheric craft. Execution will likely need blender afterwards, so a later blender load is expected and not a failure."
+  }
+]

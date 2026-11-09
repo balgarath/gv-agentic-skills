@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "query": "every few weeks I end up re-explaining how to flash the dome controller firmware onto the Teensy boards, which cable, which boot mode, the bit where it hangs at 99%. I want that to be a skill so you just know it next time. I'll paste my notes, set it up",
+    "should_trigger": false,
+    "intended_skill": "writing-skills",
+    "category": "clear",
+    "pass_if": "intended skill loads, OR maintaining-skills loads first and its triage hands off to writing-skills within one step",
+    "why_this_points_there": "No skill exists yet. Pure creation request from notes. Nothing has decayed."
+  },
+  {
+    "id": 2,
+    "query": "agents on this repo keep skipping the verify step before they say done. I put a rule in CLAUDE.md and they still talk themselves out of it, 'it's only a one line change'. I want a skill that actually holds up against that, how do I even write one that works",
+    "should_trigger": false,
+    "intended_skill": "writing-skills",
+    "category": "clear",
+    "pass_if": "intended skill loads, OR maintaining-skills loads first and its triage hands off to writing-skills within one step",
+    "why_this_points_there": "Rationalised non-compliance with a rule, and a request to author a skill to fix it. This is the compliance half of writing-skills. Note verification-before-completion also exists and could fire; that is a fifth contender and not a handoff to either sibling."
+  },
+  {
+    "id": 3,
+    "query": "we just figured out how to get Resolume to find the right Documents folder when cloud sync is redirecting it. took an hour. turn what we just did into a skill so I never have to go through that again",
+    "should_trigger": false,
+    "intended_skill": "writing-skills",
+    "category": "clear",
+    "pass_if": "intended skill loads, OR maintaining-skills loads first and its triage hands off to writing-skills within one step",
+    "why_this_points_there": "Turning a finished conversation into a brand new skill. No existing corpus."
+  },
+  {
+    "id": 4,
+    "query": "new one for the toolbox: a skill that takes the PDF quote requests clients email me and drafts the quote sheet. nothing exists for this yet. frontmatter, the whole thing",
+    "should_trigger": false,
+    "intended_skill": "writing-skills",
+    "category": "clear",
+    "pass_if": "intended skill loads, OR maintaining-skills loads first and its triage hands off to writing-skills within one step",
+    "why_this_points_there": "Explicit new skill, explicit 'nothing exists'. Lowest-ambiguity creation case, included as the anchor."
+  },
+  {
+    "id": 5,
+    "query": "I've written a new skill for tagging festival gear and I'm about to copy it onto the other two machines. how do I know it changes what an agent actually does before I roll it out? run it against something first",
+    "should_trigger": false,
+    "intended_skill": "writing-skills",
+    "category": "clear",
+    "pass_if": "intended skill loads, OR maintaining-skills loads first and its triage hands off to writing-skills within one step",
+    "why_this_points_there": "Verifying a freshly written skill before deployment. This is writing-skills' 'verifying skills work before deployment'. Mentions 'skill' heavily but nothing is old or broken."
+  },
+  {
+    "id": 6,
+    "query": "ran a grep across the blender skill and the shadow pool size says 4096 in SKILL.md, 2048 in eevee.md and 8192 in the old recipes file. which one is right? and fix it so I can't end up with three answers again",
+    "should_trigger": true,
+    "intended_skill": "maintaining-skills",
+    "category": "clear",
+    "pass_if": "intended skill loads, OR writing-skills loads first and its triage hands off to maintaining-skills within one step",
+    "why_this_points_there": "Same fact, different values in different files, plus a request to prevent recurrence. Rot mode 2 verbatim, phrased without the skill's own vocabulary."
+  },
+  {
+    "id": 7,
+    "query": "the blender skill has gotten ridiculous. it's around 3k lines now, the top file says one thing and the reference file says the opposite on half of it. someone needs to sort it out and cut it down",
+    "should_trigger": true,
+    "intended_skill": "maintaining-skills",
+    "category": "clear",
+    "pass_if": "intended skill loads, OR writing-skills loads first and its triage hands off to maintaining-skills within one step",
+    "why_this_points_there": "Large existing skill that contradicts itself. A writing-skills triage should name exactly this."
+  },
+  {
+    "id": 8,
+    "query": "scene 02 taught us a pile of stuff the skill never heard about, the obelisk clip plane thing, only bevelling close to camera. go through what the skill says against what this project actually does and tell me everywhere they disagree",
+    "should_trigger": true,
+    "intended_skill": "maintaining-skills",
+    "category": "clear",
+    "pass_if": "intended skill loads, OR writing-skills loads first and its triage hands off to maintaining-skills within one step",
+    "why_this_points_there": "Audit of a skill against a live project, both directions. The core move of maintaining-skills. No decay words at all."
+  },
+  {
+    "id": 9,
+    "query": "there's an INTAKE.md in the blender folder that sessions have been dropping findings into. go through it, fold whatever's actually good into the skill and bin the rest",
+    "should_trigger": true,
+    "intended_skill": "maintaining-skills",
+    "category": "clear",
+    "pass_if": "intended skill loads, OR writing-skills loads first and its triage hands off to maintaining-skills within one step",
+    "why_this_points_there": "Intake merge pass. A filename that only this design uses, so it is the one prompt where a literal keyword match is realistic."
+  },
+  {
+    "id": 10,
+    "query": "we moved to a newer model last week. which bits of the blender skill can it probably handle on its own now? I'd rather not keep paying tokens for stuff it already knows",
+    "should_trigger": true,
+    "intended_skill": "maintaining-skills",
+    "category": "clear",
+    "pass_if": "intended skill loads, OR writing-skills loads first and its triage hands off to maintaining-skills within one step",
+    "why_this_points_there": "Pruning after a model upgrade. Not creation, not compliance. Weakest keyword link of the five: it never says contradict, drift or audit."
+  },
+  {
+    "id": 11,
+    "query": "can you improve the blender skill? it's been through maybe six rounds of edits by different sessions and I'm fairly sure some of the numbers in it no longer match what we measured on scene 02",
+    "should_trigger": true,
+    "intended_skill": "maintaining-skills",
+    "category": "near-miss",
+    "pass_if": "maintaining-skills loads, OR writing-skills loads first (likely, its description says 'editing existing skills') and its triage hands off to maintaining-skills within one step",
+    "why_this_points_there": "Opens with a generic 'improve the skill' that writing-skills' description claims, but the context (many edits, numbers diverged from project measurements) is drift, which is maintaining-skills. Expect writing-skills to win the first fire. The handoff is the thing under test."
+  },
+  {
+    "id": 12,
+    "query": "the skill I wrote yesterday isn't triggering. I ask for exactly the thing it covers and the agent just does it the long way without ever opening it. what's wrong with it",
+    "should_trigger": false,
+    "intended_skill": "writing-skills",
+    "category": "near-miss",
+    "pass_if": "writing-skills (or skill-creator, which owns description-triggering work) loads, OR maintaining-skills loads first and its triage hands off to writing-skills within one step",
+    "why_this_points_there": "A skill that is one day old cannot have decayed. The defect is in its description, a creation-side problem. Surface features (an existing skill misbehaving, 'what's wrong with it') pull toward maintaining-skills. skill-creator is an acceptable terminal because it owns description optimisation; maintaining-skills' triage only names writing-skills, which is fine."
+  }
+]
